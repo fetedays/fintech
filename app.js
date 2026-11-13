@@ -1348,13 +1348,16 @@ const App = {
     if (timelineContainer) {
       if (fin.monthTxs.length === 0) {
         timelineContainer.innerHTML = `
-          <div style="text-align:center; padding:32px 16px; color:var(--color-text-tertiary);">
-            <div style="width:38px; height:38px; border-radius:50%; background:#f2f4f6; display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; color:#8b95a1;">
-              <i data-lucide="calendar" style="width:18px; height:18px;"></i>
+          <div class="toss-card" style="text-align:center; padding:36px 20px; border-radius:20px; margin-top:4px; border:1px dashed var(--color-border); box-shadow:none; background:var(--color-surface);">
+            <div style="width:44px; height:44px; border-radius:50%; background:var(--color-surface-subtle); display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; color:var(--color-text-tertiary); border:1px solid var(--color-border);">
+              <i data-lucide="calendar" style="width:20px; height:20px;"></i>
             </div>
-            <div style="font-size:13px; font-weight:700; color:var(--color-text-secondary); margin-bottom:4px;">${parseInt(m)}월 거래 내역이 없습니다</div>
-            <div style="font-size:11px; color:var(--color-text-tertiary); margin-bottom:12px;">+ 버튼을 눌러 새 거래를 등록하거나 다른 달로 이동해 보세요.</div>
-            <button onclick="App.openAddModal()" style="border:none; background:var(--brand-primary); color:#ffffff; font-size:11px; font-weight:700; padding:6px 14px; border-radius:8px; cursor:pointer;">+ 거래 등록</button>
+            <div style="font-size:14px; font-weight:800; color:var(--color-text-primary); margin-bottom:4px;">${parseInt(m)}월 거래 내역이 없습니다</div>
+            <div style="font-size:12px; color:var(--color-text-tertiary); margin-bottom:14px;">+ 버튼을 눌러 새 거래를 등록하거나 다른 달로 이동해 보세요.</div>
+            <button onclick="App.openAddModal()" style="border:none; background:var(--brand-primary); color:#ffffff; font-size:12px; font-weight:700; padding:8px 18px; border-radius:10px; cursor:pointer; display:inline-flex; align-items:center; gap:4px; transition:transform 0.15s ease;">
+              <i data-lucide="plus" style="width:14px; height:14px;"></i>
+              <span>새 거래 등록</span>
+            </button>
           </div>
         `;
       } else {

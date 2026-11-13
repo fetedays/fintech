@@ -179,7 +179,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 20px 14px 20px;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) 20px 14px 20px;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
@@ -1437,12 +1437,19 @@ input:focus-visible,
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+  /* 홈 우측 현금흐름 카드: 좌측 순자산 카드와 균형 잡힌 상하 정렬 */
+  #view-home > .toss-card:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 195px;
+  }
 
-  /* 가계부, 자산관리, 분석 탭 2컬럼 레이아웃 */
+  /* 가계부, 자산관리, 분석 탭 2컬럼 레이아웃 (태블릿 768px~1023px) */
   .dash-2col-container {
     display: grid !important;
-    grid-template-columns: 430px 1fr;
-    gap: 24px;
+    grid-template-columns: minmax(320px, 380px) 1fr;
+    gap: 20px;
     align-items: start;
   }
 
@@ -1541,8 +1548,8 @@ input:focus-visible,
 
 @media (min-width: 1024px) {
   .dash-2col-container {
-    grid-template-columns: 460px 1fr;
-    gap: 28px;
+    grid-template-columns: 430px 1fr;
+    gap: 24px;
   }
   .app-top-nav {
     padding: 18px 36px 16px 36px !important;
@@ -1551,8 +1558,30 @@ input:focus-visible,
     padding: 28px 36px 48px 36px;
   }
   .toss-fab-circle-add {
-    right: max(24px, calc(50vw - 550px));
+    right: max(24px, calc(50vw - 520px));
   }
+}
+
+@media (min-width: 1200px) {
+  .dash-2col-container {
+    grid-template-columns: 460px 1fr;
+    gap: 28px;
+  }
+  .toss-fab-circle-add {
+    right: max(24px, calc(50vw - 560px));
+  }
+}
+
+/* WCAG 2.1 접근성 포커스 링 스타일 */
+.desktop-tab-btn:focus-visible,
+.toss-bottom-btn:focus-visible,
+.icon-pill-btn:focus-visible,
+.btn-balance-primary:focus-visible,
+.btn-balance-secondary:focus-visible,
+.clickable:focus-visible {
+  outline: 2px solid var(--brand-secondary) !important;
+  outline-offset: 2px !important;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
