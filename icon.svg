@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003049"/>
+      <stop offset="100%" stop-color="#0064FF"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <!-- 원형 월계관 형태 링 -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="12"/>
+  <!-- M & F 시그니처 형상 -->
+  <path d="M160 350 V180 L256 270 L352 180 V350" fill="none" stroke="url(#accentGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 상승 화살표 -->
+  <polygon points="256,120 220,165 292,165" fill="#00f2fe"/>
+</svg>
